@@ -1,0 +1,29 @@
+services:
+    nextjs:
+        build:
+            context: ./devops-lr
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+        depends_on:
+            - flask
+        networks:
+            - app-network
+
+    flask:
+        build:
+            context: ./devops-lr-backend
+            dockerfile: Dockerfile
+        ports:
+            - '5001:5001'
+        volumes:
+            - ./data:/app/data
+        networks:
+            - app-network
+
+volumes:
+    data-volume:
+
+networks:
+    app-network:
+        driver: bridge
