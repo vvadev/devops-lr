@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   const handleFetchData = async () => {
-    const response = await fetch('http://localhost:5001/api/get-data');
+    const response = await fetch('http://194.87.56.114:5001/api/get-data');
     const result = await response.json();
     setFileContent(result.data);
   };
