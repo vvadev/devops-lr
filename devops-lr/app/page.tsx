@@ -16,7 +16,7 @@ export default function Home() {
   const [fileContent, setFileContent] = useState('');
 
   const handleSubmit = async () => {
-    const response = await fetch('http://localhost:5001/api/send-data', {
+    const response = await fetch('http://194.87.56.114:5001/api/send-data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
